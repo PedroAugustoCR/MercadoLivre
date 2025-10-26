@@ -1,0 +1,110 @@
+## Build results
+bin/
+obj/
+[Bb]uild/
+[Ll]og/
+[Ll]ogs/
+out/
+artifacts/
+
+## VS Code / Rider / Visual Studio
+.vscode/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## OS generated files
+ehthumbs.db
+[Tt]humbs.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+## Visual Studio cache/options directory
+.vs/
+*.dbmdl
+*.bak
+*.backup
+*.BLOB
+*.tmp
+*.temp
+
+## Test results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+*.VisualState.xml
+TestResult.xml
+nunit-*.xml
+
+## Coverage
+*.coverage
+*.coveragexml
+*.opencover.xml
+coverage*.json
+coverage*.xml
+lcov.info
+
+## Packages
+*.nupkg
+*.snupkg
+*.nuspec
+*.psmdcp
+# Uncomment se quiser ignorar pacotes restaurados
+# [Pp]ackages/
+
+## Others
+*.exe
+*.dll
+*.app
+*.appx
+*.msix
+*.msixupload
+*.msixbundle
+*.msm
+*.msp
+*.iso
+*.dmg
+*.pkg
+
+## Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+## DotCover
+.idea/
+*.dotCover
+
+## User secrets (dotnet user-secrets)
+secrets.json
+
+## Publish profiles
+Properties/PublishProfiles/
+*.pubxml
+*.publishproj
+
+## Docker
+docker-compose.override.yml
+.dockerignore
+**/docker-compose*.yaml
+**/docker-compose*.yml
+
+## Logs
+*.log
+*.tld
+*.tds
+
+## Rider
+.idea/
+*.sln.iml
+
+## macOS
+.DS_Store
+
+## Windows
+Thumbs.db
+ehthumbs.db
+
+## Linux
+*~
