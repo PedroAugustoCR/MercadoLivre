@@ -1,0 +1,35 @@
+[
+  {
+    "Id": "MLB-123",
+    "Title": "Teclado Mecânico RGB",
+    "CurrencyId": "BRL",
+    "Price": 299.90,
+    "Condition": "new",
+    "AvailableQuantity": 50,
+    "SoldQuantity": 1245,
+    "Pictures": [
+      "https://example.com/images/keyboard1.jpg",
+      "https://example.com/images/keyboard2.jpg"
+    ],
+    "Attributes": {
+      "Marca": "KeyPro",
+      "Switch": "Blue",
+      "Layout": "ABNT2"
+    },
+    "FreeShipping": true,
+    "Warranty": "12 meses pelo fabricante"
+  },
+  {
+    "Id": "MLB-456",
+    "Title": "Mouse Gamer 16000 DPI",
+    "CurrencyId": "BRL",
+    "Price": 199.50,
+    "Condition": "new",
+    "AvailableQuantity": 120,
+    "SoldQuantity": 835,
+    "Pictures": ["https://example.com/images/mouse1.jpg"],
+    "Attributes": { "Marca": "SpeedMouse", "DPI": "16000", "Conexão": "USB" },
+    "FreeShipping": false,
+    "Warranty": "6 meses pelo vendedor"
+  }
+]
