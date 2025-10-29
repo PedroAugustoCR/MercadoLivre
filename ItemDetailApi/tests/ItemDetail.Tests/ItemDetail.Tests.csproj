@@ -25,4 +25,10 @@
     <ProjectReference Include="..\..\src\ItemDetail.Domain\ItemDetail.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+  <None Include="..\..\src\ItemDetail.Api\Data\products.json" Link="Data\products.json">
+    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+  </None>
+</ItemGroup>
+
 </Project>

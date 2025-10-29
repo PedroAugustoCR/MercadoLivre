@@ -1,0 +1,189 @@
+openapi: 3.0.3
+info:
+  title: Item Detail API
+  version: 1.0.0
+  description: |
+    API para retornar detalhes de um item (inspirada no Mercado Livre).
+    Fornece o endpoint principal de detalhes do produto e um health check da API.
+  contact:
+    name: Pedro Rocha
+servers:
+  - url: http://localhost:5057
+tags:
+  - name: Health
+    description: Estado do serviço
+  - name: Items
+    description: Operações relacionadas a itens/produtos
+
+paths:
+  /health:
+    get:
+      tags: [Health]
+      summary: Health check
+      description: Verifica o estado básico do serviço.
+      operationId: Health_Get
+      responses:
+        "200":
+          description: Serviço saudável
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: ok
+
+  /api/items/{id}:
+    get:
+      tags: [Items]
+      summary: Obtém detalhes do item por ID
+      description: Retorna informações completas do item (título, preço, atributos, fotos, etc.).
+      operationId: Items_GetById
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: Identificador do item (ex. MLB-3343634071)
+          schema:
+            type: string
+            example: MLB-3343634071
+      responses:
+        "200":
+          description: Detalhes do item
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Product"
+              examples:
+                exemplo-tinta-18l:
+                  value:
+                    Id: MLB-3343634071
+                    Title: Tinta Acrílica Fosca Futura Standard 18L – Cores Sem Odor
+                    CurrencyId: BRL
+                    Price: 359.90
+                    Condition: new
+                    AvailableQuantity: null
+                    SoldQuantity: null
+                    Pictures: []
+                    Attributes:
+                      Marca: Futura
+                      Linha: Standard
+                      Acabamento: Fosco
+                      Volume: "18 L"
+                      Baixo Odor: "Sem cheiro após ~3h em ambiente ventilado"
+                      Diluicao: "Até 50% de água limpa"
+                    FreeShipping: null
+                    Warranty: ""
+        "404":
+          description: Item não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Problem"
+              examples:
+                not-found:
+                  value:
+                    type: about:blank
+                    title: Not Found
+                    status: 404
+                    detail: "Product 'MLB-XYZ' not found."
+        "500":
+          description: Erro interno
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Problem"
+
+components:
+  schemas:
+    Product:
+      type: object
+      required:
+        - Id
+        - Title
+        - CurrencyId
+        - Price
+        - Condition
+        - Attributes
+      properties:
+        Id:
+          type: string
+          description: Identificador do item.
+          example: MLB-3343634071
+        Title:
+          type: string
+          description: Título do anúncio.
+          example: Tinta Acrílica Fosca Futura Standard 18L – Cores Sem Odor
+        CurrencyId:
+          type: string
+          description: Moeda do preço.
+          example: BRL
+        Price:
+          type: number
+          format: decimal
+          description: Preço do item.
+          example: 359.90
+        Condition:
+          type: string
+          description: Estado do item.
+          enum: [new, used]
+          example: new
+        AvailableQuantity:
+          type: integer
+          nullable: true
+          description: Quantidade disponível para venda.
+          example: 50
+        SoldQuantity:
+          type: integer
+          nullable: true
+          description: Quantidade vendida.
+          example: 1245
+        Pictures:
+          type: array
+          description: URLs absolutas das imagens do produto.
+          items:
+            type: string
+            format: uri
+          example:
+            - https://example.com/images/produto1.jpg
+            - https://example.com/images/produto1b.jpg
+        Attributes:
+          type: object
+          description: Mapa de atributos do produto (chave/valor).
+          additionalProperties:
+            type: string
+          example:
+            Marca: Futura
+            Linha: Standard
+            Volume: "18 L"
+            Acabamento: Fosco
+        FreeShipping:
+          type: boolean
+          nullable: true
+          description: Indica se o frete é grátis.
+          example: true
+        Warranty:
+          type: string
+          description: Texto da garantia.
+          example: "12 meses pelo fabricante"
+
+    Problem:
+      type: object
+      properties:
+        type:
+          type: string
+          format: uri
+          example: about:blank
+        title:
+          type: string
+          example: Not Found
+        status:
+          type: integer
+          example: 404
+        detail:
+          type: string
+          example: "Product 'MLB-XYZ' not found."
+        instance:
+          type: string
+          example: "/api/items/MLB-XYZ"

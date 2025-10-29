@@ -1,6 +1,0 @@
-@ItemDetail.Api_HostAddress = http://localhost:5000
-
-GET {{ItemDetail.Api_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

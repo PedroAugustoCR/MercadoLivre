@@ -15,7 +15,7 @@ public sealed class GetProductByIdHandler
     {
         var product = await _repository.GetByIdAsync(query.Id, ct);
         if (product is null)
-            throw new NotFoundException($"Product '{query.Id}' not found.");
+            throw new NotFoundException($"Produto '{query.Id}' não encontrado.");
 
         return new ProductDto(
             product.Id,

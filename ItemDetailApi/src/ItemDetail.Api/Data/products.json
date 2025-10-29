@@ -1,35 +1,71 @@
 [
   {
-    "Id": "MLB-123",
-    "Title": "Teclado Mecânico RGB",
+    "Id": "MLB-3343634071",
+    "Title": "Tinta Acrílica Fosca Futura Standard 18L – Branco Gelo",
     "CurrencyId": "BRL",
-    "Price": 299.90,
+    "Price": 349.90,
     "Condition": "new",
-    "AvailableQuantity": 50,
-    "SoldQuantity": 1245,
-    "Pictures": [
-      "https://example.com/images/keyboard1.jpg",
-      "https://example.com/images/keyboard2.jpg"
-    ],
+    "AvailableQuantity": 500,
+    "SoldQuantity": 100,
+    "Pictures": [],
     "Attributes": {
-      "Marca": "KeyPro",
-      "Switch": "Blue",
-      "Layout": "ABNT2"
+      "Marca": "Futura",
+      "Linha": "Standard",
+      "Acabamento": "Fosco",
+      "Volume": "18 L",
+      "Cor": "Branco Gelo",
+      "Baixo Odor": "Sem cheiro após aplicação",
+      "Diluicao": "Até 50% de água limpa",
+      "Indicacao": "Ambientes internos e externos: alvenaria, massa corrida, gesso, fibrocimento",
+      "Rendimento (18L)": "≈167 m² (cores prontas)"
     },
-    "FreeShipping": true,
-    "Warranty": "12 meses pelo fabricante"
+    "FreeShipping": false,
+    "Warranty": ""
   },
   {
-    "Id": "MLB-456",
-    "Title": "Mouse Gamer 16000 DPI",
+    "Id": "MLB-3343634072",
+    "Title": "Tinta Acrílica Fosca Futura Standard 3,6L – Cores Sem Odor",
     "CurrencyId": "BRL",
-    "Price": 199.50,
+    "Price": 189.90,
     "Condition": "new",
-    "AvailableQuantity": 120,
-    "SoldQuantity": 835,
-    "Pictures": ["https://example.com/images/mouse1.jpg"],
-    "Attributes": { "Marca": "SpeedMouse", "DPI": "16000", "Conexão": "USB" },
+    "AvailableQuantity": 200,
+    "SoldQuantity": 140,
+    "Pictures": [],
+    "Attributes": {
+      "Marca": "Futura",
+      "Linha": "Standard",
+      "Acabamento": "Fosco",
+      "Volume": "3,6 L",
+      "Cor": "Cores variadas",
+      "Baixo Odor": "Versão Cores Sem Odor",
+      "Diluicao": "Até 50% de água limpa",
+      "Indicacao": "Paredes internas e externas – ideal para retoques e áreas menores",
+      "Rendimento (3,6L)": "≈33 m² (cores prontas)"
+    },
+    "FreeShipping": true,
+    "Warranty": ""
+  },
+  {
+    "Id": "MLB-3343634073",
+    "Title": "Tinta Acrílica Fosca Futura Standard 18L – Grafite Escuro",
+    "CurrencyId": "BRL",
+    "Price": 359.90,
+    "Condition": "new",
+    "AvailableQuantity": 500,
+    "SoldQuantity": 89,
+    "Pictures": [],
+    "Attributes": {
+      "Marca": "Futura",
+      "Linha": "Standard",
+      "Acabamento": "Fosco",
+      "Volume": "18 L",
+      "Cor": "Grafite Escuro",
+      "Baixo Odor": "Sem odor pós-aplicação",
+      "Diluicao": "Até 50% de água limpa",
+      "Indicacao": "Ambientes internos e externos, acabamento escuro premium",
+      "Rendimento (18L)": "≈167 m² (cores prontas)"
+    },
     "FreeShipping": false,
-    "Warranty": "6 meses pelo vendedor"
+    "Warranty": ""
   }
 ]
