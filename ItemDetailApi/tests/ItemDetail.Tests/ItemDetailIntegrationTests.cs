@@ -4,15 +4,9 @@ using ItemDetail.Application.Common.Exceptions;
 using ItemDetail.Application.UseCases.GetProductById;
 using ItemDetail.Domain.Abstractions;
 using ItemDetail.Domain.Entities;
-using Xunit;
 
 public class ItemDetailIntegrationTests
 {
-    private readonly JsonSerializerOptions _json = new(JsonSerializerDefaults.Web)
-    {
-        PropertyNameCaseInsensitive = true
-    };
-
     [Fact]
     public async Task Handler_returns_dto_for_existing_id_using_real_dataset()
     {
@@ -54,7 +48,7 @@ public class ItemDetailIntegrationTests
 {
     var path = Path.Combine(AppContext.BaseDirectory, "Data", "products.json");
     await using var fs = File.OpenRead(path);
-    var list = await JsonSerializer.DeserializeAsync<List<Product>>(fs, _json);
+    var list = await JsonSerializer.DeserializeAsync<List<Product>>(fs);
     return list ?? new List<Product>();
 }
 

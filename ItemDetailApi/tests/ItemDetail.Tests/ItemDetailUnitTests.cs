@@ -7,7 +7,7 @@ using ItemDetail.Application.Common.Exceptions;
 
 namespace ItemDetail.Tests;
 
-public class GetProductByIdUnitTests
+public class ItemDetailUnitTests
 {
     [Theory]
     [InlineData("MLB-123")]
