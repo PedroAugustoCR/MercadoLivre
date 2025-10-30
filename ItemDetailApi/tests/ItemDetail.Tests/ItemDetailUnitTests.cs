@@ -78,7 +78,6 @@ public class ItemDetailUnitTests
     [Fact]
     public async Task Maps_defaults_when_repo_returns_missing_fields_in_json()
     {
-        // Simula um produto com defaults (como se campos ausentes no JSON fossem desserializados para 0/false)
         var product = new Product
         {
             Id = "MLB-DEFAULTS",

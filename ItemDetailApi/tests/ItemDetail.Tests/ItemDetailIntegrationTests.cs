@@ -10,7 +10,6 @@ public class ItemDetailIntegrationTests
     [Fact]
     public async Task Handler_returns_dto_for_existing_id_using_real_dataset()
     {
-        // Arrange: carrega o dataset real e injeta no repo em memória
         var products = await LoadProductsAsync();
         products.Should().NotBeEmpty("precisamos de pelo menos 1 item no products.json");
 
@@ -42,8 +41,6 @@ public class ItemDetailIntegrationTests
             () => handler.Handle(new GetProductByIdQuery("__id_inexistente__")));
     }
 
-    // ---------- Helpers ----------
-
     private async Task<List<Product>> LoadProductsAsync()
 {
     var path = Path.Combine(AppContext.BaseDirectory, "Data", "products.json");
@@ -52,14 +49,12 @@ public class ItemDetailIntegrationTests
     return list ?? new List<Product>();
 }
 
-    // Repositório concreto simples (sem mocks), integra com o Handler
     private sealed class InMemoryProductRepository : IProductRepository
     {
         private readonly Dictionary<string, Product> _map;
 
         public InMemoryProductRepository(IEnumerable<Product> products)
         {
-            // indexa por Id (case-insensitive)
             _map = products.GroupBy(p => p.Id, StringComparer.OrdinalIgnoreCase)
                            .ToDictionary(g => g.Key, g => g.First(), StringComparer.OrdinalIgnoreCase);
         }

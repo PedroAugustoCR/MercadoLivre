@@ -1,5 +1,8 @@
 💾 Execução Local - 
 
+#### Pré-requisitos
+* [.NET 9 SDK](https://dotnet.microsoft.com/download)
+
 1️⃣ Na raiz do repositório (ItemDetailApi/) restaurar pacotes
 
 dotnet restore
